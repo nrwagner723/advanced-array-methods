@@ -155,7 +155,7 @@ function findItalianFood () {
 }
 
 let ItalianFood = findItalianFood();
-console.log("Italian Foods with Serving Size Greater than 5: ", ItalianFood);
+console.log("Italian Foods With Serving Size Greater Than 5: ", ItalianFood);
 
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
@@ -172,10 +172,24 @@ function servingMatchId () {
 }
 
 let servingId = servingMatchId();
-console.log("Foods with same Serving and Id: ", servingId)
+console.log("Dishes With Same Serving and Id: ", servingId);
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
+
+function returnEvenServing () {
+  let results = dishes.filter(function (el) {
+    if (el.servings % 2 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return results;
+}
+
+let evenServing = returnEvenServing();
+console.log("Dishes With Even Serving Count: ", evenServing);
 
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
