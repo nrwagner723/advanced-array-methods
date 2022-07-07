@@ -128,11 +128,7 @@ console.log("Mexican Foods: ", mexicanFood);
 
 function findVegetarianFood () {
   let results = dishes.filter(function (el) {
-    if (el.cuisine === "Vegetarian") {
-      return true;
-    } else {
-      return false;
-    }
+    return (el.cuisine === "Vegetarian");
   });
   return results;
 }
@@ -145,54 +141,56 @@ console.log("Vegetarian Foods: ", vegetarianFood);
 
 function findItalianFood () {
   let results = dishes.filter(function (el) {
-    if (el.cuisine === "Italian" && el.servings > 5) {
-      return true;
-    } else {
-      return false;
-    }
+    return (el.cuisine === "Italian" && el.servings > 5); 
   });
   return results;
 }
 
 let ItalianFood = findItalianFood();
-console.log("Italian Foods With Serving Size Greater Than 5: ", ItalianFood);
+console.log("Italian Foods with Serving Size Greater than 5: ", ItalianFood);
 
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
 
 function servingMatchId () {
   let results = dishes.filter(function (el) {
-    if (el.id === el.servings) {
-      return true;
-    } else {
-      return false;
-    }
+    return (el.id === el.servings);
   });
   return results;
 }
 
 let servingId = servingMatchId();
-console.log("Dishes With Same Serving and Id: ", servingId);
+console.log("Dishes with Same Serving and Id: ", servingId);
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
 
 function returnEvenServing () {
   let results = dishes.filter(function (el) {
-    if (el.servings % 2 === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return (el.servings % 2 === 0); 
   });
   return results;
 }
 
 let evenServing = returnEvenServing();
-console.log("Dishes With Even Serving Count: ", evenServing);
+console.log("Dishes with Even Serving Count: ", evenServing);
 
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
+
+function returnTomatoAndCheese () {
+  let results = dishes.filter(function (el) {
+    if (el.ingredients[0] === "tomato") {
+      if (el.ingredients[1] === "cheese") {
+        return true;
+      }
+    }
+  }); 
+  return results;
+}
+
+let tomatoAndCheese = returnTomatoAndCheese();
+console.log("Dishes that Include Tomato and Cheese: ", tomatoAndCheese);
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
@@ -215,3 +213,17 @@ console.log("Dishes With Even Serving Count: ", evenServing);
 //Must use Reduce, not a loop.
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
+
+
+
+
+
+
+
+// recursion practice
+function appleFinder () {
+  if (item.name === "Apple") {
+    return item;
+  } 
+  appleFinder();
+}
