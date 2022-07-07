@@ -127,7 +127,7 @@ console.log("Mexican Foods: ", mexicanFood);
 //Filter
 
 function findVegetarianFood () {
-  let results = dishes.filter(function (el) {
+  let results = dishes.filter(function(el) {
     return (el.cuisine === "Vegetarian");
   });
   return results;
@@ -140,7 +140,7 @@ console.log("Vegetarian Foods: ", vegetarianFood);
 //Filter
 
 function findItalianFood () {
-  let results = dishes.filter(function (el) {
+  let results = dishes.filter(function(el) {
     return (el.cuisine === "Italian" && el.servings > 5); 
   });
   return results;
@@ -153,7 +153,7 @@ console.log("Italian Foods with Serving Size Greater than 5: ", ItalianFood);
 //Filter
 
 function servingMatchId () {
-  let results = dishes.filter(function (el) {
+  let results = dishes.filter(function(el) {
     return (el.id === el.servings);
   });
   return results;
@@ -166,7 +166,7 @@ console.log("Dishes with Same Serving and Id: ", servingId);
 //Filter
 
 function returnEvenServing () {
-  let results = dishes.filter(function (el) {
+  let results = dishes.filter(function(el) {
     return (el.servings % 2 === 0); 
   });
   return results;
@@ -179,7 +179,7 @@ console.log("Dishes with Even Serving Count: ", evenServing);
 //Filter
 
 function returnTomatoAndCheese () {
-  let results = dishes.filter(function (el) {
+  let results = dishes.filter(function(el) {
     if (el.ingredients[0] === "tomato") {
       if (el.ingredients[1] === "cheese") {
         return true;
@@ -194,9 +194,19 @@ console.log("Dishes that Include Tomato and Cheese: ", tomatoAndCheese);
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
-
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
+
+function returnCuisineName () {
+  let results = dishes.map(function(el) {
+    return (el.cuisine)
+  });
+  let uniqueNames = [new Set(results)];
+  return uniqueNames;
+}
+
+let cuisineName = returnCuisineName();
+console.log("Cuisine Names: ", cuisineName)
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
