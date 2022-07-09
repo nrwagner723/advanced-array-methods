@@ -256,17 +256,3 @@ console.log("Dishes with chickpeas: ", chickpeas)
 //Must use Reduce, not a loop.
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
-
-
-
-
-
-
-
-// recursion practice
-function appleFinder () {
-  if (item.name === "Apple") {
-    return item;
-  } 
-  appleFinder();
-}
